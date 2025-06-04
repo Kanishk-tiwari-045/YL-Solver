@@ -2,13 +2,21 @@
   "name": "youtube-leetcode-automation",
   "version": "1.0.0",
   "description": "Automated coding solution generator",
-  "main": "backend-service/server.js",
+  "main": "server.js",
   "scripts": {
-    "start": "node backend-service/server.js",
-    "install-all": "cd backend-service && npm install && cd ../doc-generator && npm install",
-    "dev": "concurrently \"cd backend-service && npm start\" \"cd doc-generator && npm start\""
+    "start": "node server.js",
+    "build": "npm install"
   },
   "dependencies": {
-    "concurrently": "^8.2.0"
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "@google/generative-ai": "^0.2.1",
+    "axios": "^1.6.0",
+    "cheerio": "^1.0.0-rc.12",
+    "youtube-transcript": "^1.0.6",
+    "puppeteer": "^21.5.0",
+    "nodemailer": "^6.9.7",
+    "handlebars": "^4.7.8"
   }
 }

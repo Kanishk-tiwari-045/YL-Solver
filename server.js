@@ -26,7 +26,7 @@ const templatePath = path.join(__dirname, 'doc-generator', 'templates', 'solutio
 const templateSource = fs.readFileSync(templatePath, 'utf8');
 const template = handlebars.compile(templateSource);
 
-// Health check
+// Health check endpoint
 app.get('/', (req, res) => {
   res.json({ 
     status: 'OK', 
