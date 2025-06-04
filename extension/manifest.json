@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube LeetCode Solver",
+  "version": "1.0",
+  "description": "Automatically solve coding problems from YouTube and LeetCode",
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "storage"
+  ],
+  "host_permissions": [
+    "https://www.youtube.com/*",
+    "https://leetcode.com/*",
+    "http://localhost:3000/*",
+    "http://localhost:3001/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/*", "https://leetcode.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "icons": {
+    "16": "icon16.png"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Process Current Page"
+  }
+}

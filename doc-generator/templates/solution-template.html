@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>C++ Coding Solution Report</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            text-align: center;
+            border-bottom: 3px solid #007acc;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        .problem-title {
+            color: #007acc;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        .source-url {
+            color: #666;
+            font-size: 14px;
+        }
+        .problem-analysis {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            border-left: 4px solid #007acc;
+        }
+        .approach {
+            margin-bottom: 50px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .approach-title {
+            color: #007acc;
+            font-size: 22px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 8px;
+        }
+        .section-title {
+            color: #333;
+            font-size: 16px;
+            font-weight: bold;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        .complexity {
+            background: #e8f4fd;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+            border-left: 4px solid #007acc;
+        }
+        .code-block {
+            background: #f8f8f8;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            margin: 15px 0;
+            overflow-x: auto;
+            position: relative;
+        }
+        .code-title {
+            font-weight: bold;
+            color: #007acc;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+        pre {
+            margin: 0;
+            white-space: pre-wrap;
+            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+            font-size: 13px;
+            line-height: 1.4;
+        }
+        .walkthrough {
+            background: #fff9e6;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+            border-left: 4px solid #ffa500;
+        }
+        .edge-cases {
+            background: #ffe6e6;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+            border-left: 4px solid #ff6b6b;
+        }
+        .insights {
+            background: #e8f5e8;
+            padding: 25px;
+            border-radius: 8px;
+            margin-top: 40px;
+            border-left: 4px solid #28a745;
+        }
+        .test-cases {
+            background: #f0f0f0;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+        .test-case {
+            background: white;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        ul, ol {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1 class="problem-title">{{problemStatement}}</h1>
+        <div class="source-url">Source: {{sourceUrl}}</div>
+        <div class="source-url">Generated on: {{currentDate}}</div>
+    </div>
+
+    {{#if problemAnalysis}}
+    <div class="problem-analysis">
+        <h2>Problem Analysis</h2>
+        <p>{{problemAnalysis}}</p>
+    </div>
+    {{/if}}
+
+    {{#each approaches}}
+    <div class="approach">
+        <h2 class="approach-title">{{name}}</h2>
+
+        <div class="section-title">Algorithm Explanation</div>
+        <p>{{explanation}}</p>
+
+        <div class="complexity">
+            <strong>Time Complexity:</strong> {{timeComplexity}}<br><br>
+            <strong>Space Complexity:</strong> {{spaceComplexity}}
+        </div>
+
+        <div class="code-block">
+            <div class="code-title">Implementation</div>
+            <pre>{{cppCode}}</pre>
+        </div>
+
+        <div class="walkthrough">
+            <div class="section-title">Walkthrough</div>
+            <p>{{walkthrough}}</p>
+        </div>
+
+        {{#if optimizationNotes}}
+        <div class="section-title">Optimization</div>
+        <p>{{optimizationNotes}}</p>
+        {{/if}}
+    </div>
+    {{/each}}
+
+    {{#if testCases}}
+    <div class="test-cases">
+        <h2>Test Cases</h2>
+        {{#each testCases}}
+        <div class="test-case">
+            <strong>Input:</strong> {{input}}<br>
+            <strong>Output:</strong> {{output}}<br>
+            <strong>Explanation:</strong> {{explanation}}
+        </div>
+        {{/each}}
+    </div>
+    {{/if}}
+
+    {{#if keyInsights}}
+    <div class="insights">
+        <h2>Key Insights</h2>
+        <p>{{keyInsights}}</p>
+
+        {{#if practiceProblems}}
+        <h3>Practice Problems:</h3>
+        <ul>
+            {{#each practiceProblems}}
+            <li>{{this}}</li>
+            {{/each}}
+        </ul>
+        {{/if}}
+    </div>
+    {{/if}}
+</body>
+</html>

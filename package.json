@@ -1,0 +1,14 @@
+{
+  "name": "youtube-leetcode-automation",
+  "version": "1.0.0",
+  "description": "Automated coding solution generator",
+  "main": "backend-service/server.js",
+  "scripts": {
+    "start": "node backend-service/server.js",
+    "install-all": "cd backend-service && npm install && cd ../doc-generator && npm install",
+    "dev": "concurrently \"cd backend-service && npm start\" \"cd doc-generator && npm start\""
+  },
+  "dependencies": {
+    "concurrently": "^8.2.0"
+  }
+}
